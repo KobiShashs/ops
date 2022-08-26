@@ -1,0 +1,35 @@
+server:
+  port: 8811
+
+spring: 
+  cloud:
+    consul:
+      discovery: 
+        instanceId: ${spring.application.name}
+        health-check-interval: 5s
+      config:
+        management: 
+          enabled: true
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    enable-by-default: true
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    metrics:
+      tags:
+        application: ${spring.application.name}
+
+
+
