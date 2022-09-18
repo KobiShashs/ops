@@ -15,6 +15,9 @@ spring:
         output:
           binder: kafka
           destination: cloudEX
+      kafka:
+        binder:
+          replicationFactor: 1
 management:
   security: 
     enabled: false
