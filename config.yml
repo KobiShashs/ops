@@ -1,0 +1,15 @@
+server:
+  port: 9999
+
+spring:
+  cloud:
+    consul:
+      discovery:
+        instanceId: config
+        health-check-interval: 5s
+      config:
+        management:
+          enabled: true
+management:
+  security:
+    enabled: false
